@@ -25,10 +25,10 @@
     </dependencies>
 
                         <distributionManagement>
-                            <snapshotRepository>
-                                <id>nexus-snapshots</id>
+                            <repository>
+                                <id>nexus</id>
                                 <url>http://nexus.apps.masdrag.net/repository/coba/</url>
-                            </snapshotRepository>
+                            </repository>
                         </distributionManagement>
 
     <profiles>
