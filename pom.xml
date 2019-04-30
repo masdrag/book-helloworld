@@ -15,6 +15,14 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <servers>
+        <server>
+            <id>nexus</id>
+            <username>admin</username>
+            <password>admin123</password>
+        </server>
+    </servers>
+
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -24,12 +32,12 @@
         </dependency>
     </dependencies>
 
-                        <distributionManagement>
-                            <repository>
-                                <id>nexus</id>
-                                <url>http://nexus.apps.masdrag.net/repository/coba/</url>
-                            </repository>
-                        </distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <url>http://nexus.apps.masdrag.net/repository/coba/</url>
+        </repository>
+    </distributionManagement>
 
     <profiles>
         <profile>
@@ -58,25 +66,25 @@
                         <version>3.6.0.1398</version>
                     </plugin>
 
-<plugin>
-   <groupId>org.sonatype.plugins</groupId>
-   <artifactId>nexus-staging-maven-plugin</artifactId>
-   <version>1.5.1</version>
-   <executions>
-      <execution>
-         <id>default-deploy</id>
-         <phase>deploy</phase>
-         <goals>
-            <goal>deploy</goal>
-         </goals>
-      </execution>
-   </executions>
-   <configuration>
-      <serverId>nexus</serverId>
-      <nexusUrl>http://nexus.apps.masdrag.net/</nexusUrl>
-      <skipStaging>true</skipStaging>
-   </configuration>
-</plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.5.1</version>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <serverId>nexus</serverId>
+                            <nexusUrl>http://nexus.apps.masdrag.net/</nexusUrl>
+                            <skipStaging>true</skipStaging>
+                        </configuration>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
